@@ -1,0 +1,1 @@
+# java is as similar to javascript,as a car is similar to carpet
