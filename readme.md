@@ -117,3 +117,208 @@ switch (user) {
 3. NaN
 4. 0
 5. ""
+
+## Functions in JS
+```
+function sayHello(name = "Amol") {
+    console.log(`Hello ${name}`);
+}
+
+sayHello("John");
+sayHello("Carry");
+sayHello();
+
+function namaste(name = "Amol") {
+    return `Namaste ${name}`;
+}
+
+console.log(namaste("John"));
+
+
+/*
+Define a function to answer the role of the user
+1. Admin - full access
+2. SubAdmin - access to create/delete courses
+3. User - read only access
+4. other - no access
+*/
+
+function roleChecker(name, user) {
+    if (user === "admin") {
+        return `Full access for ${name}`;
+    } else if (user === "subAdmin") {
+        return `create/delete courses for ${name}`;
+    } else if (user === "user") {
+        return `read only access for ${name}`;
+    } else {
+        return "`No access for ${name}`";
+    }
+}
+
+console.log(roleChecker("Deep", "subAdmin"));
+```
+
+## Context in JS
+```
+// Execution context
+console.log(fullName);
+sayHello("Amol Palwe");
+
+var fullName="Amol";
+
+function sayHello(name){
+    console.log(`Hello ${name}`);
+}
+
+<!-- 
+function declared is scanned and made available
+variable declared is scanned and are made undefined
+ -->
+```
+
+## Scope chaining in JS
+```
+var fullName = "Amol Palwe";
+
+console.log(`Hello ${fullName}`);
+
+function sayHello1(fullName = "John Doe") {
+    console.log(`Hello ${fullName}`);
+}
+function sayHello2(fullName = "Carlos") {
+    console.log(`Hello ${fullName}`);
+}
+
+sayHello1();
+sayHello2();
+
+```
+
+## THIS in JS
+```
+console.log(this);
+```
+
+## Array in JS
+```
+var arr = ["Amol", "Palwe", "Java", "Script"];
+console.log(arr);
+arr.pop();
+console.log(arr);
+arr.push("Hello");
+console.log(arr);
+arr.unshift("Hi");
+console.log(arr);
+arr.shift("Hi");
+console.log(arr);
+console.log(arr.length);
+console.log(arr.indexOf("Java"));
+```
+
+## Callback and Arrow function
+```
+var isEven = (number) => {
+    return number % 2 === 0;
+}
+
+// console.log(isEven(4));
+
+console.log([8, 2, 6, 4].every((e) => {
+    return e % 2 === 0;
+}));
+```
+
+## fill and filter methods
+```
+const arr = [1,2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(arr.fill("A", 2, 6));
+
+console.log(arr.filter((num) => {
+    return num>=5;
+}));
+```
+
+## slice and splice methods
+```
+const users = ["ted", "john", "amol", "deep", "Carry", "Lorem"];
+
+// console.log(users.slice(1, 3));
+const arr = users.splice(1, 3, "edited");
+console.log(arr);
+console.log(users);
+// console.log(users.splice(1, 3, "edited"));
+```
+
+## Objects in JS
+```
+let user = {
+    firstName: "Amol",
+    lastName: "Palwe",
+    age: 20,
+    email : "amol@gmail.com",
+    courseList : [],
+    buyCourse : function (courseName){
+        this.courseList.push(courseName);
+    }
+}
+user.buyCourse("Javascript");
+user.buyCourse("HTML");
+console.log(user.email);
+console.table(user);
+console.log(user);
+
+```
+
+## For Loop in JS
+```
+// for(let i=0; i<10 ; i++){
+//     console.log(i);
+// }
+
+const states = ["Maharashtra", "Goa", "Karnataka", 1947, "TamilNadu", "Kerala"];
+
+for(let i=0; i<states.length; i++){
+    if(typeof states[i] === "number") break; //continue;
+    console.log(states[i]);
+
+}
+
+const states = ["Maharashtra", "Goa", "Karnataka", 1947, "TamilNadu", "Kerala"];
+
+let i=0;
+while(i<states.length){
+    console.log(states[i]);
+    i++;
+}
+
+const states = ["Maharashtra", "Goa", "Karnataka", 1947, "TamilNadu", "Kerala"];
+
+states.forEach((state) => (console.log(state)));
+```
+## forIn and forOf loop in JS
+```
+// forOf is used for objects
+const companies = ["Google", "Amazon", "Facebook", "Apple"];
+
+for(let company of companies){
+    console.log(company);
+}
+
+// forIn is used for objects
+let user = {
+    firstName: "Amol",
+    lastName: "Palwe",
+    age: 20,
+    email : "amol@gmail.com",
+    courseList : [],
+    buyCourse : function (courseName){
+        this.courseList.push(courseName);
+    }
+}
+
+for(let key in user){
+    console.log(key, user[key]);
+}
+
+```
