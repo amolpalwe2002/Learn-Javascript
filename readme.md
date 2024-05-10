@@ -197,6 +197,24 @@ sayHello2();
 ## THIS in JS
 ```
 console.log(this);
+
+let user = {
+
+    name: "John",
+    age: 30,
+    isAdmin: true,
+    getUserName: function(){
+        console.log(this);
+
+        function sayHi(){
+            console.log(this);
+        }
+        sayHi();
+    }
+}
+
+user.getUserName();
+
 ```
 
 ## Array in JS
@@ -298,7 +316,7 @@ states.forEach((state) => (console.log(state)));
 ```
 ## forIn and forOf loop in JS
 ```
-// forOf is used for objects
+// forOf is used for arrays
 const companies = ["Google", "Amazon", "Facebook", "Apple"];
 
 for(let company of companies){
@@ -320,5 +338,15 @@ let user = {
 for(let key in user){
     console.log(key, user[key]);
 }
+
+```
+
+## DOM - Document Object Model
+```
+// Select elements on web page
+
+console.log(document.getElementById("heading").innerHTML);
+let heading = document.getElementById("heading");
+heading.innerHTML = "Jay Radhe Jay Krishna";
 
 ```
